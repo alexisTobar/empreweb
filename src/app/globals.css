@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* MODO CLARO: Gris azulado muy suave para evitar el blanco plano */
+  --background: #f1f5f9; 
+  --foreground: #020617; /* Azul/Negro profundo para legibilidad */
+  --liquid-color-1: #e2e8f0;
+  --liquid-color-2: #f8fafc;
+  
+  /* Configuración de Tarjetas en Claro */
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  /* MODO OSCURO: Estética EmpreWeb original */
+  --background: #050505;
+  --foreground: #ffffff;
+  --liquid-color-1: #000b1e;
+  --liquid-color-2: #09001a;
+  
+  /* Configuración de Tarjetas en Oscuro */
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: none;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* CLASE MAESTRA: Aplica esto a tus tarjetas para que cambien solas */
+.glass-pro {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-blur: 16px;
+  transition: all 0.5s ease;
+}
+
+.liquid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, var(--background), var(--liquid-color-1), var(--liquid-color-2), var(--background));
+  background-size: 400% 400%;
+  animation: liquidAnimation 15s ease infinite;
+}
+
+@keyframes liquidAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
