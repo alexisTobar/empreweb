@@ -23,7 +23,7 @@ const pricingData: Record<Category, Plan[]> = {
     { 
       name: "Plan Standard", oldPrice: "199.988", price: "159.990", highlight: true,
       features: [
-        { text: "5 secciones", included: true }, { text: "Adaptable a móviles", included: true },
+        { text: "3 secciones", included: true }, { text: "Adaptable a móviles", included: true },
         { text: "Botón de WhatsApp", included: true }, { text: "Galería de imágenes", included: true },
         { text: "Mapa de ubicación", included: true }, { text: "Optimización SEO", included: true },
         { text: "Google Analytics", included: false }, { text: "Integración Pixel Ads", included: false }
@@ -32,8 +32,9 @@ const pricingData: Record<Category, Plan[]> = {
     { 
       name: "Plan Premium", oldPrice: "262.488", price: "209.990", highlight: false,
       features: [
-        { text: "10 secciones", included: true }, { text: "Botón de WhatsApp", included: true },
-        { text: "Optimización SEO Pro", included: true }, { text: "Google Analytics", included: true },
+        { text: "5 secciones", included: true }, { text: "Botón de WhatsApp", included: true },
+        { text: "Optimización SEO ", included: true }, { text: "Google Analytics", included: true },
+        { text: "Mapa de ubicación", included: true }, { text: "Optimización SEO", included: true },
         { text: "Estadísticas del sitio", included: true }, { text: "Multi-idioma", included: true },
         { text: "Integración Pixel Ads", included: true }
       ] 
@@ -62,7 +63,7 @@ const pricingData: Record<Category, Plan[]> = {
       name: "Plan Premium", oldPrice: "449.988", price: "359.990", highlight: false,
       features: [
         { text: "Hasta 10 páginas", included: true }, { text: "Sección Blogs + Comentarios", included: true },
-        { text: "Registro de usuarios", included: true }, { text: "Optimización SEO Pro", included: true },
+        { text: "Registro de usuarios", included: true }, { text: "Optimización SEO ", included: true },
         { text: "Google Analytics + Stats", included: true }, { text: "ChatBot Inteligente", included: true },
         { text: "Video tutoriales", included: true }, { text: "Pixel Ads", included: true }
       ] 
