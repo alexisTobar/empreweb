@@ -30,19 +30,7 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center">
           
           {/* Badge Superior Adaptativo */}
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 bg-blue-600/10 dark:bg-blue-500/10 border border-blue-600/20 dark:border-blue-500/20 px-5 py-2.5 rounded-full mb-10 backdrop-blur-xl shadow-sm"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute h-full w-full rounded-full bg-blue-600 dark:bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600 dark:bg-blue-500"></span>
-            </span>
-            <span className="text-blue-700 dark:text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">
-              Expertos en Conversión Digital
-            </span>
-          </motion.div>
+         
 
           {/* Título Principal con contraste corregido */}
           <div className="mb-8">
