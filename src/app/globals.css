@@ -6,29 +6,27 @@
 }
 
 :root {
-  /* MODO CLARO: Gris azulado muy suave para evitar el blanco plano */
   --background: #f1f5f9; 
-  --foreground: #020617; /* Azul/Negro profundo para legibilidad */
+  --foreground: #020617; 
   --liquid-color-1: #e2e8f0;
   --liquid-color-2: #f8fafc;
   
-  /* Configuración de Tarjetas en Claro */
-  --card-bg: rgba(255, 255, 255, 0.6);
-  --card-border: rgba(0, 0, 0, 0.06);
-  --card-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1);
+  /* MODO CLARO: Tarjetas blancas sólidas con sombra suave */
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
 }
 
 .dark {
-  /* MODO OSCURO: Estética EmpreWeb original */
   --background: #050505;
   --foreground: #ffffff;
   --liquid-color-1: #000b1e;
   --liquid-color-2: #09001a;
   
-  /* Configuración de Tarjetas en Oscuro */
-  --card-bg: rgba(255, 255, 255, 0.02);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --card-shadow: none;
+  /* MODO OSCURO: Gris casi negro SÓLIDO para evitar transparencia */
+  --card-bg: #0c0c0c; 
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -39,26 +37,17 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* CLASE MAESTRA: Aplica esto a tus tarjetas para que cambien solas */
+/* CLASE MAESTRA CORREGIDA: Ya no es transparente en Dark Mode */
 .glass-pro {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
-  backdrop-blur: 16px;
-  transition: all 0.5s ease;
+  /* Eliminamos backdrop-blur porque ahora es sólido */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.liquid-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(45deg, var(--background), var(--liquid-color-1), var(--liquid-color-2), var(--background));
-  background-size: 400% 400%;
-  animation: liquidAnimation 15s ease infinite;
-}
-
-@keyframes liquidAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Efecto hover premium para resaltar la solidez */
+.glass-pro:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
 }

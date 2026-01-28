@@ -2,12 +2,13 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
+import ExtraServices from "@/components/ExtraServices"; // Nuevo
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Background from "@/components/Background";
 import WhatsAppBtn from "@/components/WhatsAppBtn";
 import Structure from "@/components/Structure";
-import Marquee from "@/components/Marquee"; // 1. Importamos el nuevo componente
+import Marquee from "@/components/Marquee";
 
 export default function Home() {
   return (
@@ -19,11 +20,15 @@ export default function Home() {
         <Services />
         <Pricing />
         
-        {/* 2. Marquesina de logos como validación social */}
+        {/* Servicios adicionales para cerrar la venta */}
+        <ExtraServices /> 
+
         <Marquee /> 
-        
         <Structure />
-        <Contact />
+        
+        {/* Aquí es donde FAQ y Formulario se unen */}
+        <Contact /> 
+        
         <Footer />
       </div>
       <WhatsAppBtn />
