@@ -14,8 +14,8 @@ export default function ExtraServices() {
     <section className="pb-24 px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
         
-        {/* Explicación de Valor */}
-        <div className="mb-12 p-8 rounded-[2.5rem] bg-foreground/[0.02] border border-foreground/5 flex flex-col md:flex-row items-center gap-8">
+        {/* Explicación de Valor - Ahora usa glass-pro para ser sólido */}
+        <div className="mb-12 p-8 rounded-[2.5rem] glass-pro flex flex-col md:flex-row items-center gap-8 transition-all">
           <div className="p-5 bg-blue-600/10 rounded-3xl text-blue-600">
             <ShieldCheck size={40} />
           </div>
@@ -29,15 +29,16 @@ export default function ExtraServices() {
           </div>
         </div>
 
-        {/* Grid de Tarjetas */}
+        {/* Grid de Tarjetas - Aplicamos glass-pro a cada una */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {extraServices.map((service, i) => (
             <motion.div 
               key={i}
               whileHover={{ y: -5 }}
-              className="p-6 rounded-[2rem] border border-foreground/5 bg-foreground/[0.02] flex items-center gap-5 transition-all hover:bg-foreground/[0.04] hover:border-blue-500/20"
+             
+              className="p-6 rounded-[2rem] glass-pro flex items-center gap-5 transition-all hover:border-blue-500/50 shadow-lg"
             >
-              <div className="p-3 bg-blue-600/10 rounded-2xl text-blue-600">
+              <div className="p-3 bg-blue-600/10 rounded-2xl text-blue-600 shrink-0">
                 {service.icon}
               </div>
               <div>
